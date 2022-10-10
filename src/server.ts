@@ -23,16 +23,14 @@ app.use(express.json());
 /** To allow 'Cross-Origin Resource Sharing': https://en.wikipedia.org/wiki/Cross-origin_resource_sharing */
 app.use(cors());
 
-
-
 // use the environment variable PORT, or 4000 as a fallback
 // const PORT_NUMBER = port
 
 // API info page
 app.get("/", (req, res) => {
   res.json({
-    message: "hello i'm a local response!"
-  })
+    message: "hello i'm a local response!",
+  });
 });
 
 // GET /items
@@ -80,6 +78,6 @@ app.patch<{ id: string }, {}, Partial<DbItem>>("/items/:id", (req, res) => {
   }
 });
 
-app.listen(PORT_NUMBER, () => {
-  console.log(`Server is listening on port ${PORT_NUMBER}!`);
-});
+// app.listen(PORT_NUMBER, () => {
+//   console.log(`Server is listening on port ${PORT_NUMBER}!`);
+// });
