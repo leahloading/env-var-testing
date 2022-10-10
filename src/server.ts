@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-const { port } = require('../config');
+// const { port } = require('../config');
 
 import {
   addDummyDbItems,
@@ -10,7 +10,7 @@ import {
   DbItem,
   updateDbItemById,
 } from "./db";
-import filePath from "./filePath";
+// import filePath from "./filePath";
 
 // loading in some dummy items into the database
 // (comment out if desired, or change the number)
@@ -26,7 +26,7 @@ app.use(cors());
 
 
 // use the environment variable PORT, or 4000 as a fallback
-const PORT_NUMBER = port
+// const PORT_NUMBER = port
 
 // API info page
 app.get("/", (req, res) => {
