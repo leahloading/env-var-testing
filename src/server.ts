@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 
 // use the environment variable PORT, or 4000 as a fallback
-// const PORT_NUMBER = port
+const PORT_NUMBER = process.env.PORT;
 
 // API info page
 app.get("/", (req, res) => {
@@ -78,6 +78,6 @@ app.patch<{ id: string }, {}, Partial<DbItem>>("/items/:id", (req, res) => {
   }
 });
 
-// app.listen(PORT_NUMBER, () => {
-//   console.log(`Server is listening on port ${PORT_NUMBER}!`);
-// });
+app.listen(PORT_NUMBER, () => {
+  console.log(`Server is listening on port ${PORT_NUMBER}!`);
+});
