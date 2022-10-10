@@ -30,8 +30,9 @@ const PORT_NUMBER = port
 
 // API info page
 app.get("/", (req, res) => {
-  const pathToFile = filePath("../public/index.html");
-  res.sendFile(pathToFile);
+  res.json({
+    message: "hello i'm a local response!"
+  })
 });
 
 // GET /items
